@@ -3,13 +3,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="9PZ-vp-h0d">
             <objects>
-                <viewController id="ABy-IS-EBt" sceneMemberID="viewController">
+                <viewController id="ABy-IS-EBt" customClass="ProfileViewController" customModule="Selfigram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iE4-I4-BRj"/>
                         <viewControllerLayoutGuide type="bottom" id="lDh-F4-AtT"/>
@@ -17,13 +19,45 @@
                     <view key="view" contentMode="scaleToFill" id="8EC-wZ-FeV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="GeR-vm-e57">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="185" id="7k3-Ii-hdO"/>
+                                    <constraint firstAttribute="width" secondItem="GeR-vm-e57" secondAttribute="height" multiplier="36:37" id="HfM-qa-4ka"/>
+                                    <constraint firstAttribute="width" constant="180" id="aTQ-kV-UtV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtG-9j-TWd">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2F-Go-PjQ">
+                                <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="cameraButtonPressed:" destination="ABy-IS-EBt" eventType="touchUpInside" id="noa-I2-l5r"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BtG-9j-TWd" firstAttribute="top" secondItem="GeR-vm-e57" secondAttribute="bottom" constant="34" id="8Sw-gd-a3X"/>
+                            <constraint firstItem="BtG-9j-TWd" firstAttribute="centerX" secondItem="8EC-wZ-FeV" secondAttribute="centerX" id="FoJ-BL-LsO"/>
+                            <constraint firstItem="lDh-F4-AtT" firstAttribute="top" secondItem="q2F-Go-PjQ" secondAttribute="bottom" constant="10" id="NzE-bp-h0e"/>
+                            <constraint firstItem="q2F-Go-PjQ" firstAttribute="leading" secondItem="8EC-wZ-FeV" secondAttribute="leadingMargin" constant="10" id="biq-5Y-pkb"/>
+                            <constraint firstItem="GeR-vm-e57" firstAttribute="centerX" secondItem="8EC-wZ-FeV" secondAttribute="centerX" id="m6i-Xw-PlI"/>
+                            <constraint firstItem="GeR-vm-e57" firstAttribute="top" secondItem="iE4-I4-BRj" secondAttribute="bottom" constant="46" id="o2C-8H-0gi"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dbX-rI-NtW"/>
+                    <connections>
+                        <outlet property="profileImageView" destination="GeR-vm-e57" id="dvL-jv-aOX"/>
+                        <outlet property="usernameLabel" destination="BtG-9j-TWd" id="gTJ-vy-MLz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VaI-Cp-Fbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79.200000000000003" y="-677.81109445277366"/>
+            <point key="canvasLocation" x="-80.799999999999997" y="-678.71064467766121"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mPc-9L-TGX">
@@ -114,7 +148,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="34u-We-TmS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News Feed" image="NewsFeed" id="B8s-2j-5Jg"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="v30-ly-Gln">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="v30-ly-Gln">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.46085339666308717" green="0.72862810863874339" blue="0.70832463718673255" alpha="1" colorSpace="calibratedRGB"/>
@@ -134,7 +168,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ob4-Ed-m6p" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Activities" image="Activities" id="UFk-9b-FA9"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="IAf-2E-R7w">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IAf-2E-R7w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.52156862745098043" green="0.75686274509803919" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
@@ -154,7 +188,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sIX-Sj-fe0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="DWG-Tf-8Jj"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="trr-1g-LXl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="trr-1g-LXl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.5725490196078431" green="0.77647058823529413" blue="0.7686274509803922" alpha="1" colorSpace="calibratedRGB"/>
@@ -173,5 +207,6 @@
         <image name="Activities" width="25" height="25"/>
         <image name="NewsFeed" width="25" height="25"/>
         <image name="Profile" width="25" height="25"/>
+        <image name="placeholder" width="256" height="256"/>
     </resources>
 </document>
