@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D03F6A51DE5534400ABB96A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D03F6A41DE5534400ABB96A /* User.swift */; };
+		6D03F6A71DE5552900ABB96A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D03F6A61DE5552900ABB96A /* Post.swift */; };
 		6D1456501DDEB89F00C86AF8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D14564F1DDEB89F00C86AF8 /* ProfileViewController.swift */; };
 		6DEF48B91DDC0B650006FC7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF48B81DDC0B650006FC7B /* AppDelegate.swift */; };
 		6DEF48BB1DDC0B650006FC7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF48BA1DDC0B650006FC7B /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D03F6A41DE5534400ABB96A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6D03F6A61DE5552900ABB96A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		6D14564F1DDEB89F00C86AF8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6DEF48B51DDC0B650006FC7B /* Selfigram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Selfigram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DEF48B81DDC0B650006FC7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 		6DEF48AC1DDC0B640006FC7B = {
 			isa = PBXGroup;
 			children = (
+				6D03F6A41DE5534400ABB96A /* User.swift */,
+				6D03F6A61DE5552900ABB96A /* Post.swift */,
 				6DEF48B71DDC0B650006FC7B /* Selfigram */,
 				6DEF48CC1DDC0B650006FC7B /* SelfigramTests */,
 				6DEF48D71DDC0B650006FC7B /* SelfigramUITests */,
@@ -262,9 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D03F6A51DE5534400ABB96A /* User.swift in Sources */,
 				6D1456501DDEB89F00C86AF8 /* ProfileViewController.swift in Sources */,
 				6DEF48BB1DDC0B650006FC7B /* ViewController.swift in Sources */,
 				6DEF48B91DDC0B650006FC7B /* AppDelegate.swift in Sources */,
+				6D03F6A71DE5552900ABB96A /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
